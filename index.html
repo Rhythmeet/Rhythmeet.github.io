@@ -15,21 +15,58 @@
         width: 50%;
         height: 50%;
     }
-    .button {
-        border: 2px solid darkslategrey;
-        color: white;
-        font-size: x-large;
-        background-color:cadetblue;
-        width: 40%;
-        height: 50px;
-        border-radius: 16px;
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    }
+
     .suite-container {
         border: 2px solid darkslategrey;
         border-radius: 16px;
         padding-top: 3px;
         padding-bottom: 12px;
+    }
+    
+    button {
+        position: relative;
+        color: rgba(255,255,255,1);
+        text-decoration: none;
+        background-color: cadetblue;
+        font-weight: 700;
+        font-size: 3em;
+        display: block;
+        padding: 4px;
+        padding-left: 10px;
+        padding-right: 10px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        -webkit-box-shadow: 0px 9px 0px rgb(30, 70, 71), 0px 9px 25px rgba(0,0,0,.7);
+        -moz-box-shadow: 0px 9px 0px rgb(30, 70, 71), 0px 9px 25px rgba(0,0,0,.7);
+        box-shadow: 0px 9px 0px rgb(30, 70, 71), 0px 9px 25px rgba(0,0,0,.7);
+        margin: 45px auto;
+        width: 160px;
+        text-align: center;
+        white-space: nowrap;
+        width: max-content !important;
+        
+        -webkit-transition: all .1s ease;
+        -moz-transition: all .1s ease;
+        -ms-transition: all .1s ease;
+        -o-transition: all .1s ease;
+        transition: all .1s ease;
+    }
+
+    button:active {
+        -webkit-box-shadow: 0px 3px 0px rgb(30, 70, 71), 0px 3px 6px rgba(0,0,0,.9);
+        -moz-box-shadow: 0px 3px 0px rgb(30, 70, 71), 0px 3px 6px rgba(0,0,0,.9);
+        box-shadow: 0px 3px 0px rgb(30, 70, 71), 0px 3px 6px rgba(0,0,0,.9);
+        position: relative;
+        top: 6px;
+    }
+
+    .button-small {
+        display: inline-block;
+        margin: 10px auto;
+        border: 0px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
 </style>
@@ -42,7 +79,7 @@
 <div class="suite-container">
     <h3 style="text-align:center; border:2px solid lightblue;">Maimai</h1>
     <a href="https://forms.gle/X5wdApdmMfNGKrFi9"></a><img src="maimai.png" alt="maimai registration form" class="center"></a>
-    <button class="button center" onclick="document.location='https\://forms.gle/X5wdApdmMfNGKrFi9'">
+    <button class="center" onclick="document.location='https\://forms.gle/X5wdApdmMfNGKrFi9'">
         Maimai Tournament Registration Form
     </button>
 
@@ -72,9 +109,11 @@
 
 <h3 style="text-align:center; border:2px solid lightblue;">Connect with us!</h1>
 
-<p><a href="https://www.twitch.tv/rhythmeet">Our Twitch.tv <i class="fa-brands fa-twitch" style="display: inline;"></i></a></p>
-<p><a href="https://www.instagram.com/rhythmeetus">Our Instagram <i class="fa-brands fa-instagram" style="display: inline;"></i></a></p>
-<p><a href="https://www.facebook.com/rhythmeetus">Our Facebook <i class="fa-brands fa-facebook" style="display: inline;"></i></a></p>
-<p><a href="https://www.youtube.com/@Rhythmeet">Our YouTube <i class="fa-brands fa-youtube" style="display: inline;"></i></a></p>
+<p style="text-align: center;">
+    <button class="button-small" style="background: rgb(100, 65, 165);" onclick="document.location='https\://www.twitch.tv/rhythmeet'">Twitch.tv <i class="fa-brands fa-twitch" style="display: inline;"></i></button>
+    <button class="button-small" style="background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);"onclick="document.location='https\://www.instagram.com/rhythmeetus'">Instagram <i class="fa-brands fa-instagram" style="display: inline;"></i></button>
+    <button class="button-small" style="background: rgb(66, 103, 178);" onclick="document.location='https\://www.facebook.com/rhythmeetus'">Facebook <i class="fa-brands fa-facebook" style="display: inline;"></i></button>
+    <button class="button-small" style="background: rgb(255, 0, 0);" onclick="document.location='https\://www.youtube.com/@Rhythmeet'">YouTube <i class="fa-brands fa-youtube" style="display: inline;"></i></button>
+</p>
 
 </body>

@@ -5,8 +5,13 @@
 <script src="https://kit.fontawesome.com/b20253bfc0.js" crossorigin="anonymous"></script>
 <style>
     body {
-        background-color: paleturquoise ;
+        background: paleturquoise ;
+        background-image: url(final_back1.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: white;
     }
     .center {
         display: block;
@@ -16,14 +21,43 @@
         height: 50%;
     }
 
-    .suite-container {
-        border: 2px solid darkslategrey;
+    .suite-container-dark {
+        border: 3px solid white;
         border-radius: 16px;
         padding-top: 3px;
         padding-bottom: 12px;
+        background: rgba(15, 15, 28, 0.50);
     }
     
+    .suite-container-light {
+        border: 3px solid black;
+        border-radius: 16px;
+        padding-top: 3px;
+        padding-bottom: 12px;
+        background: rgba(140, 189, 239, 0.50);
+    }
+    
+    .left {
+        padding: 20px;
+        float: left;
+        width: 50%; /* The width is 20%, by default */
+    }
+
+    .right {
+        padding: 20px;
+        float: left;
+        width: 50%; /* The width is 20%, by default */
+    }
+
+    /* Use a media query to add a break point at 800px: */
+    @media screen and (max-width: 800px) {
+        .left, .right {
+            width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+        }
+    }
+
     button {
+        border: 0px;
         position: relative;
         color: rgba(255,255,255,1);
         text-decoration: none;
@@ -69,40 +103,58 @@
         margin-right: 20px;
     }
 
+    .button-dark {
+        background:rgb(36, 36, 49, 0.7);
+        -webkit-box-shadow: 0px 9px 0px rgb(21, 21, 29), 0px 9px 25px rgba(0,0,0,.7);
+        -moz-box-shadow: 0px 9px 0px rgb(21, 21, 29), 0px 9px 25px rgba(0,0,0,.7);
+        box-shadow: 0px 9px 0px rgb(21, 21, 29), 0px 9px 25px rgba(0,0,0,.7);
+    }
+
+    .button-light {
+        background: rgba(175, 215, 255, 0.7);
+
+        -webkit-box-shadow: 0px 9px 0px rgb(103, 143, 184), 0px 9px 25px rgba(0,0,0,.7);
+        -moz-box-shadow: 0px 9px 0px rgb(103, 143, 184), 0px 9px 25px rgba(0,0,0,.7);
+        box-shadow: 0px 9px 0px rgb(103, 143, 184), 0px 9px 25px rgba(0,0,0,.7);
+    }
+
 </style>
 </head>
 
-<h1 style="text-align:center; border:2px solid lightblue; font-size:xx-large;">Rhythmeet Tournament Suite</h1>
+
+    <h1 style="margin: auto; margin-bottom: 30px; text-align:center; border-radius: 8px; width:80%; background: rgba(255, 255, 255, 0.50); font-size:xx-large; color:black;">Rhythmeet Tournament Suite</h1>
 
 
-<h2 style="text-align:center; border:2px solid lightblue;">Arcade RG Suite</h2>
-<div class="suite-container">
-    <h3 style="text-align:center; border:2px solid lightblue;">Maimai</h1>
+    <h2 style="margin: auto; text-align:center; border-radius: 8px; width:65%; background: rgba(255, 255, 255, 0.50); color:black;">Arcade RG Suite</h2>
+
+<div class="suite-container-light">
+    <h3 style="margin: auto; text-align:center; border-radius: 8px; border:2px solid black; width:max-content; padding:10px; color:black;">Maimai</h1>
     <a href="https://forms.gle/X5wdApdmMfNGKrFi9"></a><img src="maimai.png" alt="maimai registration form" class="center"></a>
-    <button class="center" onclick="document.location='https\://forms.gle/X5wdApdmMfNGKrFi9'">
+    <button class="center button-dark" style="background:rgb(36, 36, 49, 0.7);" onclick="document.location='https\://forms.gle/X5wdApdmMfNGKrFi9'">
         Maimai Tournament Registration Form
     </button>
 
 
-    <h3 style="text-align:center; border:2px solid lightblue;">Chunithm</h1>
+    <h3 style="margin: auto; text-align:center; border-radius: 8px; border:2px solid black; width:max-content; padding:10px; color:black;">Chunithm</h1>
     <a href="https://forms.gle/X5wdApdmMfNGKrFi9"></a><img src="chunithm.png" alt="chunithm registration form" class="center"></a>
-    <button class="button center" onclick="document.location='https\://forms.gle/khFHPmn3Eky3us4e9'">
+    <button class="center button-dark" onclick="document.location='https\://forms.gle/khFHPmn3Eky3us4e9'">
         Chunithm Tournament Registration Form
     </button>
 </div>
 
-<h2 style="text-align:center; border:2px solid lightblue;">Mobile RG suite</h2>
-<div class="suite-container">
-    <h3 style="font-family:Cambria; text-align:center; border:2px solid lightblue;">Arcaea</h1>
+<h2 style="margin: auto; margin-top: 30px; text-align:center; border-radius: 8px; width:75%; background: rgba(15, 15, 28, 0.50);">Mobile RG Suite</h2>
+
+<div class="suite-container-dark">
+    <h3 style="margin: auto; text-align:center; border-radius: 8px; border:2px solid white; width:max-content; padding:10px; color:white;">Arcaea</h1>
     <a href="https://forms.gle/X5wdApdmMfNGKrFi9"></a><img src="arcaea.png" alt="arcaea registration form" class="center"></a>
-    <button class="button center" onclick="document.location='https\://forms.gle/SDcQWtxYGrukUaij9'">
+    <button class="button button-light" onclick="document.location='https\://forms.gle/SDcQWtxYGrukUaij9'">
         Arcaea Tournament Registration Form
     </button>
         
 
-    <h3 style="text-align:center; border:2px solid lightblue;">Phigros</h1>
+    <h3 style="margin: auto; text-align:center; border-radius: 8px; border:2px solid white; width:max-content; padding:10px; color:white;">Phigros</h1>
     <a href="https://forms.gle/X5wdApdmMfNGKrFi9"></a><img src="phigros.png" alt="phigros registration form" class="center"></a>
-    <button class="button center" onclick="document.location='https\://forms.gle/NY2PbLXMDJm8sqX26'">
+    <button class="button button-light" onclick="document.location='https\://forms.gle/NY2PbLXMDJm8sqX26'">
         Phigros Tournament Registration Form
     </button>
 </div>
@@ -110,10 +162,23 @@
 <h3 style="text-align:center; border:2px solid lightblue;">Connect with us!</h1>
 
 <p style="text-align: center;">
-    <button class="button-small" style="background: rgb(100, 65, 165);" onclick="document.location='https\://www.twitch.tv/rhythmeet'">Twitch.tv <i class="fa-brands fa-twitch" style="display: inline;"></i></button>
-    <button class="button-small" style="background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);"onclick="document.location='https\://www.instagram.com/rhythmeetus'">Instagram <i class="fa-brands fa-instagram" style="display: inline;"></i></button>
-    <button class="button-small" style="background: rgb(66, 103, 178);" onclick="document.location='https\://www.facebook.com/rhythmeetus'">Facebook <i class="fa-brands fa-facebook" style="display: inline;"></i></button>
-    <button class="button-small" style="background: rgb(255, 0, 0);" onclick="document.location='https\://www.youtube.com/@Rhythmeet'">YouTube <i class="fa-brands fa-youtube" style="display: inline;"></i></button>
+    <button class="button-small" style="background: rgb(100, 65, 165); -webkit-box-shadow: 0px 9px 0px rgb(48, 30, 81), 0px 9px 25px rgba(0,0,0,.7); -moz-box-shadow: 0px 9px 0px rgb(48, 30, 81), 0px 9px 25px rgba(0,0,0,.7); box-shadow: 0px 9px 0px rgb(48, 30, 81), 0px 9px 25px rgba(0,0,0,.7);" 
+        onclick="document.location='https\://www.twitch.tv/rhythmeet'">
+        Twitch.tv <i class="fa-brands fa-twitch" style="display: inline;"></i>
+    </button>
+    <button class="button-small" style="background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); -webkit-box-shadow: 0px 9px 0px #962fbf, 0px 9px 25px rgba(0,0,0,.7); -moz-box-shadow: 0px 9px 0px #962fbf, 0px 9px 25px rgba(0,0,0,.7); box-shadow: 0px 9px 0px #962fbf, 0px 9px 25px rgba(0,0,0,.7);" 
+        onclick="document.location='https\://www.instagram.com/rhythmeetus'">
+        Instagram <i class="fa-brands fa-instagram" style="display: inline;"></i></button>
+    <button class="button-small" style="background: rgb(66, 103, 178); -webkit-box-shadow: 0px 9px 0px rgb(26, 44, 79), 0px 9px 25px rgba(0,0,0,.7); -moz-box-shadow: 0px 9px 0px rgb(26, 44, 79), 0px 9px 25px rgba(0,0,0,.7); box-shadow: 0px 9px 0px rgb(26, 44, 79), 0px 9px 25px rgba(0,0,0,.7);" 
+        onclick="document.location='https\://www.facebook.com/rhythmeetus'">
+        Facebook <i class="fa-brands fa-facebook" style="display: inline;"></i></button>
+    <button class="button-small" style="background: rgb(255, 0, 0);  -webkit-box-shadow: 0px 9px 0px rgb(135, 2, 2), 0px 9px 25px rgba(0,0,0,.7); -moz-box-shadow: 0px 9px 0px rgb(135, 2, 2), 0px 9px 25px rgba(0,0,0,.7); box-shadow: 0px 9px 0px rgb(135, 2, 2), 0px 9px 25px rgba(0,0,0,.7);" 
+        onclick="document.location='https\://www.youtube.com/@Rhythmeet'">
+        YouTube <i class="fa-brands fa-youtube" style="display: inline;"></i></button>
+    <button class="button-small" style="background: rgb(114,137,218); -webkit-box-shadow: 0px 9px 0px rgb(67, 82, 138), 0px 9px 25px rgba(0,0,0,.7); -moz-box-shadow: 0px 9px 0px rgb(67, 82, 138), 0px 9px 25px rgba(0,0,0,.7); box-shadow: 0px 9px 0px rgb(67, 82, 138), 0px 9px 25px rgba(0,0,0,.7);" 
+        onclick="document.location='https\://discord.com/invite/MqJAxqdsXz'">
+        Discord <i class="fa-brands fa-discord" style="display: inline;"></i></button>
+
 </p>
 
 </body>

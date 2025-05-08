@@ -1,197 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title text-align:center;> Rhythmeet Tournament Suite </title>
-<link rel="icon" href="/omniman.png" type="image/png" />
-<script src="https://kit.fontawesome.com/b20253bfc0.js" crossorigin="anonymous"></script>
-<style>
+  <meta charset="UTF-8">
+  <title>Rhythmeet Tournament Suite</title>
+  <link rel="icon" href="icons/logo_circle.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/b20253bfc0.js" crossorigin="anonymous"></script>
+  <style>
     body {
-        background: rgb(175, 215, 255) ;
-        background-image: url(final_back1.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        color: white;
+      background: rgb(175, 215, 255);
+      background-image: url(final_back1.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
     }
-    .center {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-        height: 50%;
+
+    h1, h2, h3 {
+      text-align: center;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.50);
+      color: black;
+      padding: 10px;
+      margin: 20px auto;
+      max-width: 90%;
+    }
+
+    h2 {
+      width: 65%;
+    }
+
+    h3 {
+      width: max-content;
+      padding: 10px;
+      border: 2px solid black;
+    }
+
+    .suite-container-dark, .suite-container-light {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 0 auto 40px auto;
+      max-width: 1200px;
+      animation: fadeIn 1s ease-in-out forwards;
     }
 
     .suite-container-dark {
-        border: 3px solid white;
-        border-radius: 16px;
-        padding-top: 3px;
-        padding-bottom: 12px;
-        background: rgba(15, 15, 28, 0.50);
+      background: rgba(15, 15, 28, 0.50);
+      border: 3px solid white;
     }
-    
+
     .suite-container-light {
-        border: 3px solid black;
-        border-radius: 16px;
-        padding-top: 3px;
-        padding-bottom: 12px;
-        background: rgba(140, 189, 239, 0.50);
-    }
-    
-    .left {
-        padding: 20px;
-        float: left;
-        width: 50%; /* The width is 20%, by default */
+      background: rgba(140, 189, 239, 0.50);
+      border: 3px solid black;
     }
 
-    .right {
-        padding: 20px;
-        float: left;
-        width: 50%; /* The width is 20%, by default */
+    .game-block {
+      flex: 1 1 300px;
+      margin: 20px;
+      text-align: center;
     }
 
-    /* Use a media query to add a break point at 800px: */
-    @media screen and (max-width: 800px) {
-        .left, .right {
-            width: 45%; /* The width is 100%, when the viewport is 800px or smaller */
-        }
+    .game-block h3 {
+      color: inherit;
+      background: transparent;
+      border-color: inherit;
+    }
+
+    .center {
+      max-width: 80%;
+      height: auto;
+      margin: 0 auto 20px;
+      display: block;
+    }
+
+    .center:hover {
+        transition-duration: 400ms;
+        transform: scale(1.05);
     }
 
     button {
-        border: 0px;
-        position: relative;
-        color: rgba(255,255,255,1);
-        text-decoration: none;
-        background-color: cadetblue;
-        font-weight: 700;
-        font-size: 3em;
-        display: block;
-        padding: 4px;
-        padding-left: 10px;
-        padding-right: 10px;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-        border-radius: 8px;
-        -webkit-box-shadow: 0px 9px 0px rgb(30, 70, 71), 0px 9px 25px rgba(0,0,0,.7);
-        -moz-box-shadow: 0px 9px 0px rgb(30, 70, 71), 0px 9px 25px rgba(0,0,0,.7);
-        box-shadow: 0px 9px 0px rgb(30, 70, 71), 0px 9px 25px rgba(0,0,0,.7);
-        margin: 45px auto;
-        width: 160px;
-        text-align: center;
-        white-space: nowrap;
-        width: max-content !important;
-        
-        -webkit-transition: all .1s ease;
-        -moz-transition: all .1s ease;
-        -ms-transition: all .1s ease;
-        -o-transition: all .1s ease;
-        transition: all .1s ease;
+      border: none;
+      background-color: cadetblue;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2em;
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0px 9px 0px rgb(30, 70, 71), 0px 9px 25px rgba(0,0,0,.7);
+      margin: 15px auto;
+      display: block;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      max-width: 90%;
+    }
+
+    button:hover {
+        transition-duration: 400ms;
+        transform: scale(1.05);
+        box-shadow: 0px 11px 14px rgba(0, 0, 0, 0.6);
     }
 
     button:active {
-        -webkit-box-shadow: 0px 3px 0px rgb(30, 70, 71), 0px 3px 6px rgba(0,0,0,.9);
-        -moz-box-shadow: 0px 3px 0px rgb(30, 70, 71), 0px 3px 6px rgba(0,0,0,.9);
-        box-shadow: 0px 3px 0px rgb(30, 70, 71), 0px 3px 6px rgba(0,0,0,.9);
-        position: relative;
-        top: 6px;
-    }
-
-    .button-small {
-        display: inline-block;
-        margin: 10px auto;
-        border: 0px;
-        margin-left: 20px;
-        margin-right: 20px;
+      box-shadow: 0px 3px 0px rgb(30, 70, 71), 0px 3px 6px rgba(0,0,0,.9);
+      position: relative;
+      top: 6px;
     }
 
     .button-dark {
-        background:rgb(36, 36, 49, 0.7);
-        -webkit-box-shadow: 0px 9px 0px rgb(21, 21, 29), 0px 9px 25px rgba(0,0,0,.7);
-        -moz-box-shadow: 0px 9px 0px rgb(21, 21, 29), 0px 9px 25px rgba(0,0,0,.7);
-        box-shadow: 0px 9px 0px rgb(21, 21, 29), 0px 9px 25px rgba(0,0,0,.7);
+      background: rgba(36, 36, 49, 0.7);
+      box-shadow: 0px 9px 0px rgb(21, 21, 29), 0px 9px 25px rgba(0,0,0,.7);
     }
 
     .button-light {
-        background: rgba(175, 215, 255, 0.7);
-
-        -webkit-box-shadow: 0px 9px 0px rgb(103, 143, 184), 0px 9px 25px rgba(0,0,0,.7);
-        -moz-box-shadow: 0px 9px 0px rgb(103, 143, 184), 0px 9px 25px rgba(0,0,0,.7);
-        box-shadow: 0px 9px 0px rgb(103, 143, 184), 0px 9px 25px rgba(0,0,0,.7);
+      background: rgba(175, 215, 255, 0.7);
+      box-shadow: 0px 9px 0px rgb(103, 143, 184), 0px 9px 25px rgba(0,0,0,.7);
     }
 
-</style>
+    button:disabled,
+    .button-disabled {
+        background-color: gray !important;
+        color: #ccc !important;
+        box-shadow: none !important;
+        cursor: not-allowed !important;
+        transform: none !important;
+        pointer-events: none;
+        opacity: 0.6;
+    }
+
+    .button-small {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 15px;
+      font-size: 1em;
+    }
+
+    .socials {
+      text-align: center;
+      margin: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .suite-container-dark, .suite-container-light {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      button {
+        font-size: 1em;
+        width: 90%;
+      }
+
+      .center {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
+<body>
 
+  <h1>Rhythmeet Tournament Suite</h1>
+  <h2>Arcade RG Suite</h2>
 
-    <h1 style="margin: auto; margin-bottom: 30px; text-align:center; border-radius: 8px; width:80%; background: rgba(255, 255, 255, 0.50); font-size:xx-large; color:black;">Rhythmeet Tournament Suite</h1>
-
-
-    <h2 style="margin: auto; text-align:center; border-radius: 8px; width:65%; background: rgba(255, 255, 255, 0.50); color:black;">Arcade RG Suite</h2>
-
-<div class="suite-container-light">
-    <h3 style="margin: auto; text-align:center; border-radius: 8px; border:2px solid black; width:max-content; padding:10px; color:black;">Maimai</h1>
-    <a href="https://forms.gle/X5wdApdmMfNGKrFi9"></a><img src="icons/maimai.png" alt="maimai registration form" class="center"></a>
-    <button class="center button-dark" onclick="document.location='https\://docs.google.com/document/d/1yLxw83-EXhZx4N6-8icAkPrXQMQ_99kYoA8HSG8dShw/edit?usp=sharing'">
+  <div class="suite-container-light">
+    <div class="game-block">
+      <h3>Maimai</h3>
+      <img src="icons/maimai.png" alt="Maimai" class="center">
+      <button class="button-dark" onclick="window.location.href='https://docs.google.com/document/d/1yLxw83-EXhZx4N6-8icAkPrXQMQ_99kYoA8HSG8dShw/edit?usp=sharing'">
         Maimai Tournament RnR
-    </button>
-    <button class="center button-dark" onclick="document.location='https\://forms.gle/X5wdApdmMfNGKrFi9'">
-        Maimai Tournament Registration Form
-    </button>
+      </button>
+      <button class="button-dark button-disabled" onclick="window.location.href='https://forms.gle/X5wdApdmMfNGKrFi9'">
+        Registrations Closed
+      </button>
+      
+      <h4>Qualifier Songs</h4>
+      <img src="maimai_qualifiers.png" alt="Qualifier songs" class="center" style="border-radius: 10px;">
+    </div>
 
-
-    <h3 style="margin: auto; text-align:center; border-radius: 8px; border:2px solid black; width:max-content; padding:10px; color:black;">Chunithm</h1>
-    <a href="https://forms.gle/X5wdApdmMfNGKrFi9"></a><img src="icons/chunithm.png" alt="chunithm registration form" class="center"></a>
-    <button class="center button-dark" onclick="document.location='https\://docs.google.com/document/d/1ar3Ju93NgwSGA201ChL8iY0qElMxmH44ekJgLK3Q4JE/edit?usp=sharing'">
+    <div class="game-block">
+      <h3>Chunithm</h3>
+      <img src="icons/chunithm.png" alt="Chunithm" class="center">
+      <button class="button-dark" onclick="window.location.href='https://docs.google.com/document/d/1ar3Ju93NgwSGA201ChL8iY0qElMxmH44ekJgLK3Q4JE/edit?usp=sharing'">
         Chunithm Tournament RnR
-    </button>
-    <button class="center button-dark" onclick="document.location='https\://forms.gle/khFHPmn3Eky3us4e9'">
+      </button>
+      <button class="button-dark" onclick="window.location.href='https://forms.gle/khFHPmn3Eky3us4e9'">
         Chunithm Tournament Registration Form
-    </button>
-</div>
+      </button>
+            
+      <h4>Registration Seeding Songs</h4>
+      <img src="chuni_registration_seeding.png" alt="registration songs" class="center" style="border-radius: 10px;">
+    </div>
+  </div>
 
-<h2 style="margin: auto; margin-top: 30px; text-align:center; border-radius: 8px; width:75%; background: rgba(15, 15, 28, 0.50);">Mobile RG Suite</h2>
+  <h2 style="background: rgba(15, 15, 28, 0.50); color: white;">Mobile RG Suite</h2>
 
-<div class="suite-container-dark">
-    <h3 style="margin: auto; text-align:center; border-radius: 8px; border:2px solid white; width:max-content; padding:10px; color:white;">Arcaea</h1>
-    <a href="https://forms.gle/X5wdApdmMfNGKrFi9"></a><img src="icons/arcaea.png" alt="arcaea registration form" class="center"></a>
-    <button class="button button-light" onclick="document.location='https\://docs.google.com/document/d/14Qpi92q2f5GND308zuRwPmSkbSj5yiRV3plozUU9HCQ/edit?usp=sharing'">
+  <div class="suite-container-dark">
+    <div class="game-block">
+      <h3>Arcaea</h3>
+      <img src="icons/arcaea.png" alt="Arcaea" class="center">
+      <button class="button-light" onclick="window.location.href='https://docs.google.com/document/d/14Qpi92q2f5GND308zuRwPmSkbSj5yiRV3plozUU9HCQ/edit?usp=sharing'">
         Arcaea Tournament RnR
-    </button>
-    <button class="button button-light" onclick="document.location='https\://forms.gle/SDcQWtxYGrukUaij9'">
+      </button>
+      <button class="button-light" onclick="window.location.href='https://forms.gle/SDcQWtxYGrukUaij9'">
         Arcaea Tournament Registration Form
-    </button>
-        
+      </button>
+    </div>
 
-    <h3 style="margin: auto; text-align:center; border-radius: 8px; border:2px solid white; width:max-content; padding:10px; color:white;">Phigros</h1>
-    <a href="https://forms.gle/X5wdApdmMfNGKrFi9"></a><img src="icons/phigros.png" alt="phigros registration form" class="center"></a>
-    <button class="button button-light" onclick="document.location='https\://docs.google.com/document/d/1o7VAUbjp-XirzPc0l4hTOXd0xeypAslyQZDmaSkKzpY/edit?usp=sharing'">
+    <div class="game-block">
+      <h3>Phigros</h3>
+      <img src="icons/phigros.png" alt="Phigros" class="center">
+      <button class="button-light" onclick="window.location.href='https://docs.google.com/document/d/1o7VAUbjp-XirzPc0l4hTOXd0xeypAslyQZDmaSkKzpY/edit?usp=sharing'">
         Phigros Tournament RnR
-    </button>
-    <button class="button button-light" onclick="document.location='https\://forms.gle/NY2PbLXMDJm8sqX26'">
-        Phigros Tournament Registration Form
-    </button>
-</div>
+      </button>
+      <button class="button-dark button-disabled" onclick="window.location.href='https://forms.gle/NY2PbLXMDJm8sqX26'">
+        Registrations Closed
+      </button>
+    </div>
+  </div>
 
-<h3 style="text-align:center; border:2px solid lightblue;">Connect with us!</h1>
+  <h3 style="text-align:center; color:black;">Connect with us!</h3>
 
-<p style="text-align: center;">
+  <div class="socials">
     <button class="button-small" style="background: rgb(100, 65, 165); -webkit-box-shadow: 0px 9px 0px rgb(48, 30, 81), 0px 9px 25px rgba(0,0,0,.7); -moz-box-shadow: 0px 9px 0px rgb(48, 30, 81), 0px 9px 25px rgba(0,0,0,.7); box-shadow: 0px 9px 0px rgb(48, 30, 81), 0px 9px 25px rgba(0,0,0,.7);" 
-        onclick="document.location='https\://www.twitch.tv/rhythmeet'">
-        Twitch.tv <i class="fa-brands fa-twitch" style="display: inline;"></i>
+    onclick="window.location.href='https://www.twitch.tv/rhythmeet'">
+      Twitch <i class="fa-brands fa-twitch"></i>
     </button>
     <button class="button-small" style="background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); -webkit-box-shadow: 0px 9px 0px #962fbf, 0px 9px 25px rgba(0,0,0,.7); -moz-box-shadow: 0px 9px 0px #962fbf, 0px 9px 25px rgba(0,0,0,.7); box-shadow: 0px 9px 0px #962fbf, 0px 9px 25px rgba(0,0,0,.7);" 
-        onclick="document.location='https\://www.instagram.com/rhythmeetus'">
-        Instagram <i class="fa-brands fa-instagram" style="display: inline;"></i></button>
+    onclick="window.location.href='https://www.instagram.com/rhythmeetus'">
+      Instagram <i class="fa-brands fa-instagram"></i>
+    </button>
     <button class="button-small" style="background: rgb(66, 103, 178); -webkit-box-shadow: 0px 9px 0px rgb(26, 44, 79), 0px 9px 25px rgba(0,0,0,.7); -moz-box-shadow: 0px 9px 0px rgb(26, 44, 79), 0px 9px 25px rgba(0,0,0,.7); box-shadow: 0px 9px 0px rgb(26, 44, 79), 0px 9px 25px rgba(0,0,0,.7);" 
-        onclick="document.location='https\://www.facebook.com/rhythmeetus'">
-        Facebook <i class="fa-brands fa-facebook" style="display: inline;"></i></button>
+    onclick="window.location.href='https://www.facebook.com/rhythmeetus'">
+      Facebook <i class="fa-brands fa-facebook"></i>
+    </button>
     <button class="button-small" style="background: rgb(255, 0, 0);  -webkit-box-shadow: 0px 9px 0px rgb(135, 2, 2), 0px 9px 25px rgba(0,0,0,.7); -moz-box-shadow: 0px 9px 0px rgb(135, 2, 2), 0px 9px 25px rgba(0,0,0,.7); box-shadow: 0px 9px 0px rgb(135, 2, 2), 0px 9px 25px rgba(0,0,0,.7);" 
-        onclick="document.location='https\://www.youtube.com/@Rhythmeet'">
-        YouTube <i class="fa-brands fa-youtube" style="display: inline;"></i></button>
+    onclick="window.location.href='https://www.youtube.com/@Rhythmeet'">
+      YouTube <i class="fa-brands fa-youtube"></i>
+    </button>
     <button class="button-small" style="background: rgb(114,137,218); -webkit-box-shadow: 0px 9px 0px rgb(67, 82, 138), 0px 9px 25px rgba(0,0,0,.7); -moz-box-shadow: 0px 9px 0px rgb(67, 82, 138), 0px 9px 25px rgba(0,0,0,.7); box-shadow: 0px 9px 0px rgb(67, 82, 138), 0px 9px 25px rgba(0,0,0,.7);" 
-        onclick="document.location='https\://discord.com/invite/TVTpbtDKE8'">
-        Discord <i class="fa-brands fa-discord" style="display: inline;"></i></button>
-
-</p>
-
+    onclick="window.location.href='https://discord.com/invite/TVTpbtDKE8'">
+      Discord <i class="fa-brands fa-discord"></i>
+    </button>
+  </div>
 </body>

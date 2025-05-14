@@ -8,10 +8,10 @@
   <script src="https://kit.fontawesome.com/b20253bfc0.js" crossorigin="anonymous"></script>
   <style>
     body {
-      background: rgb(175, 215, 255);
+      background: rgb(13, 12, 27);
       background-image: url(final_back1.png);
-      background-size: cover;
-      background-position: center;
+      background-size: contain;
+      background-position: top;
       background-repeat: no-repeat;
       font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       color: white;
@@ -37,6 +37,16 @@
       width: max-content;
       padding: 10px;
       border: 2px solid black;
+    }
+
+    .news-light{
+        border-right: 2px solid rgb(103, 143, 184);
+        border-bottom: 2px solid rgb(103, 143, 184);
+    }
+
+    .news-dark{
+        border-right: 2px solid rgba(36, 36, 49, 1);
+        border-bottom: 2px solid rgba(36, 36, 49, 1);
     }
 
     .suite-container-dark, .suite-container-light {
@@ -170,7 +180,7 @@
 
   <div class="suite-container-light">
     <div class="game-block">
-      <h3>Maimai</h3>
+      <h3 style="color: black;">Maimai</h3>
       <img src="icons/maimai.png" alt="Maimai" class="center">
       <button class="button-dark" onclick="window.location.href='https://docs.google.com/document/d/1yLxw83-EXhZx4N6-8icAkPrXQMQ_99kYoA8HSG8dShw/edit?usp=sharing'">
         Maimai Tournament RnR
@@ -178,22 +188,28 @@
       <button class="button-dark button-disabled" onclick="window.location.href='https://forms.gle/X5wdApdmMfNGKrFi9'">
         Registrations Closed
       </button>
-      
-      <h4>Qualifier Songs</h4>
+
+      <h4 class="news-dark" style="color: black;">News</h4>
+      <h3 style="color: black;">Qualifier submissions deadline<br>19th May 2025 (GMT+8) 12.00am</h4>
+      <h4 style="color: black;">Qualifier Songs</h4>
       <img src="maimai_qualifiers.png" alt="Qualifier songs" class="center" style="border-radius: 10px;">
     </div>
 
     <div class="game-block">
-      <h3>Chunithm</h3>
+      <h3 style="color: black;">Chunithm</h3>
       <img src="icons/chunithm.png" alt="Chunithm" class="center">
       <button class="button-dark" onclick="window.location.href='https://docs.google.com/document/d/1ar3Ju93NgwSGA201ChL8iY0qElMxmH44ekJgLK3Q4JE/edit?usp=sharing'">
         Chunithm Tournament RnR
       </button>
-      <button class="button-dark" onclick="window.location.href='https://forms.gle/khFHPmn3Eky3us4e9'">
-        Chunithm Tournament Registration Form
+      <button class="button-dark button-disabled" onclick="window.location.href='https://forms.gle/khFHPmn3Eky3us4e9'">
+        Registrations Closed
       </button>
             
-      <h4>Registration Seeding Songs</h4>
+      
+      <h4 class="news-dark" style="color: black;">News</h4>
+      
+      <h3 style="color: black;">Score Tabulation Ongoing.. Stay Tuned!</h4>
+      <h4 style="color: black;">Registration Seeding Songs</h4>
       <img src="chuni_registration_seeding.png" alt="registration songs" class="center" style="border-radius: 10px;">
     </div>
   </div>
@@ -207,9 +223,12 @@
       <button class="button-light" onclick="window.location.href='https://docs.google.com/document/d/14Qpi92q2f5GND308zuRwPmSkbSj5yiRV3plozUU9HCQ/edit?usp=sharing'">
         Arcaea Tournament RnR
       </button>
-      <button class="button-light" onclick="window.location.href='https://forms.gle/SDcQWtxYGrukUaij9'">
-        Arcaea Tournament Registration Form
+      <button class="button-light button-disabled" onclick="window.location.href='https://forms.gle/SDcQWtxYGrukUaij9'">
+        Registrations Closed
       </button>
+
+      <h4 class="news-light" style="color: white;">News</h4>
+      <h3>Participant filtering ongoing.. Stay tuned!</h3>
     </div>
 
     <div class="game-block">
@@ -218,8 +237,18 @@
       <button class="button-light" onclick="window.location.href='https://docs.google.com/document/d/1o7VAUbjp-XirzPc0l4hTOXd0xeypAslyQZDmaSkKzpY/edit?usp=sharing'">
         Phigros Tournament RnR
       </button>
-      <button class="button-dark button-disabled" onclick="window.location.href='https://forms.gle/NY2PbLXMDJm8sqX26'">
+      <button class="button-light button-disabled" onclick="window.location.href='https://forms.gle/NY2PbLXMDJm8sqX26'">
         Registrations Closed
+      </button>
+      
+      <h4 class="news-light" style="color: white;">News</h4>
+      <h3>Score Attack Event Duration<br>9th June 2025 (GMT+8) 12.00am</h4>
+      <h4>Public Score Attack Songlist</h4>
+      <img src="phigros_score_attack.png" alt="score attack songlist" class="center" style="border-radius: 10px;">
+
+      
+      <button class="button-light" onclick="window.location.href='https://forms.gle/Zq5C5UB2VxzyU8UL7'">
+        Public Score Attack Submissions Form
       </button>
     </div>
   </div>
